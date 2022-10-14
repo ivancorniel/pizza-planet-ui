@@ -45,6 +45,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/app/beverage/beverages.html">beverage</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/report/report.html">Report</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -71,18 +74,26 @@
       </div>
     </div>
 
-    <template id="order-item-template">
-      <tr class="d-flex">
-        <td class="col-3">{{client_name}}</td>
-        <td class="col-2">{{client_dni}}</td>
-        <td class="col-3">{{client_address}}</td>
-        <td class="col-2 text-right">${{total_price}}</td>
-        <td class="col-2">
-          <div class="text-center">
-            <a class="btn btn-success btn-sm view-order" href="/app/order/order-detail.html?_id={{_id}}">View</a>
-          </div>
-        </td>
-      </tr>
+    <template id="report-item-template">
+      <h5>Most requested ingredient</h5>
+      <strong>{{most_requested_ingredient.0}}</strong> with
+      <strong>{{most_requested_ingredient.1}} requests</strong>
+      <hr />
+      <h5>Top Customers</h5>
+      <strong>{{top_3_customers.0.customer}}</strong> with
+      <strong>USD {{top_3_customers.0.amount}} spent</strong>
+      <br />
+      <strong>{{top_3_customers.1.customer}} </strong> with
+      <strong> USD {{top_3_customers.1.amount}} spent</strong>
+      <br />
+      <strong>{{top_3_customers.2.customer}} </strong> with
+      <strong> USD {{top_3_customers.2.amount}} spent</strong>
+      <hr />
+      <h5>Month with more revenue</h5>
+      <strong>
+        {{month_with_more_revenue.0}} with USD {{month_with_more_revenue.1}} in
+        revenue
+      </strong>
     </template>
 
     <!-- Optional JavaScript -->
