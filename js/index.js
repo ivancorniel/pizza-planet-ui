@@ -83,7 +83,6 @@ function fetchOrderBeverages() {
   fetch("http://127.0.0.1:5000/beverage/")
     .then((response) => response.json())
     .then((beverages) => {
-      console.log(beverages);
       let rows = beverages.map((element) => createBeverageTemplate(element));
       let table = $("#beverages tbody");
       table.append(rows);
